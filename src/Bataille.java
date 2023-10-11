@@ -40,8 +40,8 @@ public class Bataille {
             }
         }
 
-        // Bataille avec 25 round (car chaque joueur possède 25 cartes)
-        for (int i = 25; i > 0; i--) {
+        // Bataille avec 26 round (car chaque joueur possède 26 cartes)
+        for (int i = 26; i > 0; i--) {
             Carte carte1 = joueur1.tireCarte();
             Carte carte2 = joueur2.tireCarte();
 

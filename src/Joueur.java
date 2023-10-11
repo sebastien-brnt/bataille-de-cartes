@@ -6,7 +6,7 @@ public class Joueur {
 
     // Constructeur
     Joueur() {
-        this.tabCarte = new Carte[25];
+        this.tabCarte = new Carte[26];
         this.points = 0;
     }
 
@@ -43,7 +43,7 @@ public class Joueur {
     }
 
     public void addCarte(Carte carte, int index) {
-        if (index < 25) {
+        if (index < 26) {
             this.tabCarte[index] = carte;
         }
     }
