@@ -61,6 +61,4 @@ public class Joueur {
             this.tabCarte[index] = carte;
         }
     }
-
-
 }

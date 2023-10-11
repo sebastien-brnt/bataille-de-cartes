@@ -47,10 +47,6 @@ public class Bataille {
             Carte carte1 = joueur1.tireCarte();
             Carte carte2 = joueur2.tireCarte();
 
-            System.out.println(joueur1.getCartes().length);
-            System.out.println(joueur2.getCartes().length);
-            // System.out.println(joueur2.toString());
-
             if (carte1 != null && carte2 != null) {
                 System.out.println("");
                 System.out.println("Le Joueur 1 met la carte : " + carte1.toString());
@@ -94,8 +90,6 @@ public class Bataille {
                     nouveauPaquetEgalite[paquetEgalite.length] = carte1; // Ajouter la nouvelle carte
                     nouveauPaquetEgalite[paquetEgalite.length + 1] = carte2; // Ajouter la seconde carte
                     paquetEgalite = nouveauPaquetEgalite; // Remplacer l'ancien tableau par le nouveau
-                    System.out.println("Pas de point attribué");
-
                     System.out.println("Pas de point attribué");
                 }
 
