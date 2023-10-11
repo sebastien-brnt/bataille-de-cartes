@@ -40,10 +40,16 @@ public class Bataille {
             }
         }
 
-        // Bataille avec 26 round (car chaque joueur possède 26 cartes)
-        for (int i = 26; i > 0; i--) {
+        Carte[] paquetEgalite = new Carte[0];
+
+        // Bataille temps que les joueurs ont  des cartes
+        while (joueur1.getCartes().length > 0 && joueur2.getCartes().length > 0) {
             Carte carte1 = joueur1.tireCarte();
             Carte carte2 = joueur2.tireCarte();
+
+            System.out.println(joueur1.getCartes().length);
+            System.out.println(joueur2.getCartes().length);
+            // System.out.println(joueur2.toString());
 
             if (carte1 != null && carte2 != null) {
                 System.out.println("");
@@ -53,10 +59,43 @@ public class Bataille {
                 int resultatRound = carte1.compare(carte2);
 
                 if (resultatRound == 1) {
+                    joueur1.addCarte(carte2, 100);
+
+                    if (paquetEgalite.length > 0) {
+                        for (int i = 0; i < paquetEgalite.length; i++) {
+                            joueur1.addCarte(paquetEgalite[i], 100);
+                        }
+
+                        paquetEgalite = new Carte[0];
+                    }
+
                     System.out.println(joueur1.addPoint() + " 1");
                 } else if (resultatRound == 2) {
+                    joueur2.addCarte(carte1, 100);
+
+                    if (paquetEgalite.length > 0) {
+                        for (int i = 0; i < paquetEgalite.length; i++) {
+                            joueur2.addCarte(paquetEgalite[i], 100);
+                        }
+
+                        paquetEgalite = new Carte[0];
+                    }
+
                     System.out.println(joueur2.addPoint() + " 2");
                 } else {
+                    Carte[] nouveauPaquetEgalite = new Carte[paquetEgalite.length + 2]; // Créer un nouveau tableau plus grand
+
+                    if (paquetEgalite.length > 0) {
+                        for (int i = 0; i < paquetEgalite.length; i++) {
+                            nouveauPaquetEgalite[i] = paquetEgalite[i]; // Copier les cartes de l'ancien tableau
+                        }
+                    }
+
+                    nouveauPaquetEgalite[paquetEgalite.length] = carte1; // Ajouter la nouvelle carte
+                    nouveauPaquetEgalite[paquetEgalite.length + 1] = carte2; // Ajouter la seconde carte
+                    paquetEgalite = nouveauPaquetEgalite; // Remplacer l'ancien tableau par le nouveau
+                    System.out.println("Pas de point attribué");
+
                     System.out.println("Pas de point attribué");
                 }
 

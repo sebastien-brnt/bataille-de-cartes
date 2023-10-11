@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Joueur {
 
     // Attributs du joueur
@@ -42,9 +44,23 @@ public class Joueur {
         return "Point attribué au joueur";
     }
 
+    public String toString() {
+        return "Joueur{" +
+                "tabCarte=" + Arrays.toString(tabCarte) +
+                '}';
+    }
+
     public void addCarte(Carte carte, int index) {
-        if (index < 26) {
+        if (index == 100) {
+            int length = tabCarte.length + 1;
+            Carte[] nouveautabCarte = new Carte[length];
+            nouveautabCarte[0] = carte; // Placez la nouvelle carte en première position
+            System.arraycopy(tabCarte, 0, nouveautabCarte, 1, tabCarte.length); // Décalez les éléments existants vers la droite
+            this.tabCarte = nouveautabCarte;
+        } else {
             this.tabCarte[index] = carte;
         }
     }
+
+
 }
