@@ -15,12 +15,21 @@ public class Joueur {
 
     //****** Getters ******//
     public int getPoints() {
-
         return this.points;
     }
 
     public Carte[] getCartes() {
         return this.tabCarte;
+    }
+
+    public int getNbCartes() {
+        return this.tabCarte.length;
+    }
+
+    public String toString() {
+        return "Joueur{" +
+                "tabCarte=" + Arrays.toString(tabCarte) +
+                '}';
     }
 
 
@@ -41,17 +50,12 @@ public class Joueur {
 
     public String addPoint() {
         this.points++;
-        return "Point attribué au joueur";
-    }
-
-    public String toString() {
-        return "Joueur{" +
-                "tabCarte=" + Arrays.toString(tabCarte) +
-                '}';
+        return "Point attribué au Joueur";
     }
 
     public void addCarte(Carte carte, int index) {
-        if (index == 100) {
+        // Si la valeur est 999 on ajoute en dessous du paquet, sinon on empile
+        if (index == 999) {
             int length = tabCarte.length + 1;
             Carte[] nouveautabCarte = new Carte[length];
             nouveautabCarte[0] = carte; // Placez la nouvelle carte en première position
