@@ -110,7 +110,7 @@ public class Bataille {
             }
 
             // Affichage du score
-            System.out.println("Les scores sont de : J1 " + joueur1.getPoints() + " à J2 " + joueur2.getPoints());
+            System.out.println("Les scores sont de : " + joueur1.getPoints() + " (Joueur 1) à " + joueur2.getPoints() + " (Joueur 2)");
         }
 
         // Espacement avant l'affichage du résultat
@@ -118,18 +118,18 @@ public class Bataille {
 
         // Résultats de la bataille
         if (joueur1.getPoints() > joueur2.getPoints()) {
-            System.out.println("Le gagnant est le Joueur 1 avec le score de J1 " + joueur1.getPoints() + " à J2 " + joueur2.getPoints());
+            System.out.println("Le gagnant est le Joueur 1 avec le score de " + joueur1.getPoints() + " (Joueur 1) à " + joueur2.getPoints() + " (Joueur 2)");
 
         } else if (joueur1.getPoints() < joueur2.getPoints()) {
-            System.out.println("Le gagnant est le Joueur 2 avec le score de J2 " + joueur2.getPoints() + " à J1 " + joueur1.getPoints());
+            System.out.println("Le gagnant est le Joueur 2 avec le score de " + joueur2.getPoints() + " (Joueur 2) à " + joueur1.getPoints() + " (Joueur 1)");
 
         } else {
             // En cas d'égalité de point, on vérifie quel joueur n'a plus de carte et on définit l'autre joueur gagnant
             if (joueur1.getNbCartes() == 0 && joueur1.getNbCartes() < joueur2.getNbCartes()) {
-                System.out.println("Le gagnant est le Joueur 2 avec le score de J2 " + joueur2.getPoints() + " à J1 " + joueur1.getPoints() + " car J1 n'a plus de carte");
+                System.out.println("Le gagnant est le Joueur 2 avec le score de " + joueur2.getPoints() + " (Joueur 2) à " + joueur1.getPoints() + " (Joueur 1) car le Joueur 1 n'a plus de carte");
 
             } else if (joueur2.getNbCartes() == 0 && joueur2.getNbCartes() < joueur1.getNbCartes()) {
-                System.out.println("Le gagnant est le Joueur 1 avec le score de J1 " + joueur1.getPoints() + " à J2 " + joueur2.getPoints() + " car J2 n'a plus de carte");
+                System.out.println("Le gagnant est le Joueur 1 avec le score de " + joueur1.getPoints() + " (Joueur 1) à " + joueur2.getPoints() + " (Joueur 2) car le Joueur 2 n'a plus de carte");
 
             } else {
                 // Si les deux joueur ont le même score et n'ont plus de carte tout les deux

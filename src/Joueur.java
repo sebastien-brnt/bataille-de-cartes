@@ -50,7 +50,7 @@ public class Joueur {
 
     public String addPoint() {
         this.points++;
-        return "Point attribué au Joueur";
+        return "Point attribué au joueur";
     }
 
     public void addCarte(Carte carte, int index) {
@@ -58,8 +58,8 @@ public class Joueur {
         if (index == 999) {
             int length = tabCarte.length + 1;
             Carte[] nouveautabCarte = new Carte[length];
-            nouveautabCarte[0] = carte; // Placez la nouvelle carte en première position
-            System.arraycopy(tabCarte, 0, nouveautabCarte, 1, tabCarte.length); // Décalez les éléments existants vers la droite
+            nouveautabCarte[0] = carte;
+            System.arraycopy(tabCarte, 0, nouveautabCarte, 1, tabCarte.length);
             this.tabCarte = nouveautabCarte;
         } else {
             this.tabCarte[index] = carte;
