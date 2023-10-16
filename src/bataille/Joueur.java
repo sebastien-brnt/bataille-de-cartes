@@ -1,3 +1,5 @@
+package bataille;
+
 import java.util.Arrays;
 
 public class Joueur {
@@ -27,7 +29,7 @@ public class Joueur {
     }
 
     public String toString() {
-        return "Joueur{" +
+        return "bataille.Joueur{" +
                 "tabCarte=" + Arrays.toString(tabCarte) +
                 '}';
     }

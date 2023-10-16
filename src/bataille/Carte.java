@@ -1,3 +1,5 @@
+package bataille;
+
 public class Carte {
     // Attributs de la carte
     private String couleur;
