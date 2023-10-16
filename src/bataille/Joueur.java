@@ -35,7 +35,7 @@ public class Joueur {
     }
 
 
-    //****** Autres fonctions ******//
+    //****** Autres méthodes ******//
     public Carte tireCarte() {
         if (tabCarte.length > 0) {
             Carte derniereCarte = tabCarte[tabCarte.length - 1];

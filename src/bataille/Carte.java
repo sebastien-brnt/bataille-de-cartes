@@ -52,7 +52,7 @@ public class Carte {
         this.valeur = valeur;
     }
 
-    //****** Autres fonctions ******//
+    //****** Autres méthodes ******//
     // Vérification de l'existance de la couleur dans le tableau static des couleurs
     private boolean isValidCouleur(String couleur) {
         for (String couleurValide : COULEURS) {
